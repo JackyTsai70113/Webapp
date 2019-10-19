@@ -1,0 +1,37 @@
+@page
+@model Webapp.Pages.JsonEditors.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JsonEditor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JsonEditor.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JsonEditor.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JsonEditor.UpdateTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JsonEditor.UpdateTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JsonEditor.Content)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JsonEditor.Content)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.JsonEditor.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

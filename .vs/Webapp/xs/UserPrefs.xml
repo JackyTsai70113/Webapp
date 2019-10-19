@@ -3,13 +3,24 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
       <File FileName="README.md" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="25" Column="6" />
+      <File FileName="Data/WebappContext.cs" Line="10" Column="27" />
+      <File FileName="Model/JsonEditor.cs" Line="9" Column="36" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="25" Column="22" />
+      <File FileName="Pages/JsonEditors/Create.cshtml" Line="7" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="Webapp" expanded="True">
             <Node name="Webapp" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Model" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="wwwroot" expanded="True" />
               <Node name="Program.cs" selected="True" />
             </Node>
           </Node>

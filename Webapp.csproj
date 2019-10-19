@@ -10,10 +10,36 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Pages\JsonEditor\" />
     <Folder Include="Data\" />
+    <Folder Include="Pages\JsonEditors\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\JsonEditor\Create.cshtml.cs" />
+    <Compile Remove="Pages\JsonEditor\Edit.cshtml.cs" />
+    <Compile Remove="Pages\JsonEditor\Details.cshtml.cs" />
+    <Compile Remove="Pages\JsonEditor\Delete.cshtml.cs" />
+    <Compile Remove="Pages\JsonEditor\Index.cshtml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\JsonEditor\Index.cshtml.cs~" />
+    <None Remove="Pages\JsonEditor\Delete.cshtml.cs~" />
+    <None Remove="Pages\JsonEditor\Create.cshtml.cs~" />
+    <None Remove="Pages\JsonEditor\Details.cshtml.cs~" />
+    <None Remove="Pages\JsonEditor\Edit.cshtml.cs~" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Pages\JsonEditor\Create.cshtml" />
+    <Content Remove="Pages\JsonEditor\Delete.cshtml" />
+    <Content Remove="Pages\JsonEditor\Index.cshtml" />
   </ItemGroup>
 </Project>
