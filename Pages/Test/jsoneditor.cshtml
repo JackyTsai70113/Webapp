@@ -1,0 +1,168 @@
+﻿@page
+@model Webapp.Pages.Test.jsoneditorModel
+
+@{
+    ViewData["Title"] = "Test-JsonEditor";
+}
+
+<style type="text/css">
+    .btn-group > .btn:not(:last-child){
+        border-top-right-radius: .25rem !important;
+        border-bottom-right-radius: .25rem !important;
+    }
+
+</style>
+
+<h3><span>Person</span>
+    <div class="btn-group" style="margin-left: 10px;">
+        <button type="button" title="Collapse"
+                class="btn btn-outline-secondary json-editor-btn-collapse ">
+            <i class="far fa-caret-square-down"></i>
+        </button>
+    </div>
+</h3>
+
+<div style="display: flex;margin-bottom:8px;">
+    <h3 style="line-height: 1;">Person</h3>
+    <div class="btn-group" style="margin-left: 15px;">
+        <button type="button" title="Collapse"
+                class="btn btn-outline-secondary json-editor-btn-collapse ">
+            <i class="far fa-caret-square-down"></i>
+        </button>
+    </div>
+</div>
+<div style="display: flex;">
+    <h3><span>Person</span></h3>
+    <div class="btn-group" style="margin-left: 10px;">
+        <button type="button" title="Collapse"
+                class="btn btn-outline-secondary json-editor-btn-collapse ">
+            <i class="far fa-caret-square-down"></i>
+        </button>
+    </div>
+    <div class="btn-group" style="margin-left: 10px;">
+        <button type="button" title="Edit JSON"
+                class="btn btn-outline-secondary json-editor-btn-edit ">
+            <i class="far fa-pencil-alt"></i> JSON
+        </button>
+        
+        <div style="background-color: white; border: 1px solid black;
+                    box-shadow: black 3px 3px; position: absolute;
+                    z-index: 10; left: 0px; top: 35px; display: none;">
+            <textarea style="width: 300px; height: 170px;
+                        box-sizing: border-box; display: block;">
+{
+    "name": "Jeremy Dorn",
+    "age": 25,
+    "favorite_color": "#ffa500",
+    "gender": "male",
+    "location": {
+        "city": "San Francisco",
+            "state": "CA",
+            "citystate": "San Francisco, CA"
+    },
+    "pets": [
+        {
+            "type": "dog",
+            "name": "Walter"
+        }
+    ]
+}
+            </textarea>
+            <button type="button" title="Save"
+                    class="btn btn-outline-secondary json-editor-btn-save ">
+                <i class="far fa-save"></i> Save
+            </button>
+            <button type="button" title="Cancel"
+                    class=" btn btn-outline-secondary json-editor-btn-cancel ">
+                <i class="fa fa-ban"></i> Cancel
+            </button>
+        </div>
+    </div>
+    <div class="btn-group" style="margin-left: 10px;">
+        <button type="button" title="Object Properties"
+                class=" btn btn-outline-secondary json-editor-btn-edit ">
+            <i class="fa fa-pencil"></i> Properties
+        </button>
+        <div style="background-color: white; border: 1px solid black;
+                box-shadow: black 3px 3px; position: absolute;
+                z-index: 10; left: 0px; top: 35px; display: none;">
+            <div class="property-selector"
+                 style="width: 295px; max-height: 160px;
+                        padding: 5px 0px 5px 5px; overflow-y: auto;
+                        overflow-x: hidden;">
+                <div class="control-group"
+                        style="margin-top: 0px; padding-top: 0px; margin-bottom: 0px;
+                            padding-bottom: 0px; height: auto;">
+                    <div class="controls" style="height: 30px;">
+                        <label class=" checkbox"
+                                style="display: inline-block; font-weight: normal;">
+                            name
+                            <input type="checkbox"
+                                   style="width: auto; display: inline-block;">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group"
+                    style="margin-top: 0px; padding-top: 0px; margin-bottom: 0px;
+                    padding-bottom: 0px; height: auto;">
+                <div class="controls" style="height: 30px;">
+                    <label class=" checkbox"
+                            style="display: inline-block; font-weight: normal;">
+                        age
+                        <input type="checkbox" style="width: auto; display: inline-block;">
+                    </label>
+                </div>
+            </div>
+            <div class="control-group"
+                    style="margin-top: 0px; padding-top: 0px; margin-bottom: 0px;
+                        padding-bottom: 0px; height: auto;">
+                <div class="controls" style="height: 30px;">
+                    <label class=" checkbox"
+                            style="display: inline-block; font-weight: normal;">
+                        favorite color
+                        <input type="checkbox" style="width: auto; display: inline-block;">
+                    </label>
+                </div>
+            </div>
+            <div class="control-group"
+                    style="margin-top: 0px; padding-top: 0px;  margin-bottom: 0px;
+                        padding-bottom: 0px; height: auto;">
+                <div class="controls" style="height: 30px;">
+                    <label class=" checkbox"
+                            style="display: inline-block; font-weight: normal;">
+                        gender
+                        <input type="checkbox" style="width: auto; display: inline-block;">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <input type="text" placeholder="Property name..."
+                style="width: 220px; margin-bottom: 0px; display: inline-block;">
+        <button type="button" title="add"
+                class=" btn btn-default json-editor-btn-add ">
+            <i class="fa fa-plus"></i> add
+        </button>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+
+<script>
+    window.onload = function(){
+        $('input[type=text]').each(function() {
+            this.style.width = this.value.length * 20 + 'px';
+            $(this).keyup(function() {
+              this.style.width = this.value.length * 20 + 'px';
+            });
+        })
+    }
+    
+    $('.json-editor-btn-edit').click(function () {
+        var display = $(this).parent().get(0).children[1].style.display;
+        if ($(this).parent().get(0).children[1].style.display == 'none')
+            $(this).parent().get(0).children[1].style.display = 'block';
+        else
+            $(this).parent().get(0).children[1].style.display = 'none';
+        //alert($(this).parent().get(0).children[1].style.display);
+    })
+</script>

@@ -1,0 +1,40 @@
+﻿@page
+@model Webapp.Pages.Plugins.PopperModel
+
+@{
+    ViewData["Title"] = "input";
+}
+
+<div id="popup" style="background-color:red;">
+     Popper.js Tutorial!
+</div>
+<div style="text-align:right">
+<button id="button-a">button</button>
+    </div>
+
+<script src="~/lib/popper/popper.min.js"></script>
+<script>
+    var ref = $('#button-a');
+    var popup = $('#popup');
+    popup.hide();
+
+    ref.mouseover(function(){
+        popup.show();
+    });
+
+    ref.mouseout(function(){
+        popup.hide();
+    });
+
+
+    var popper = new Popper(ref,popup,{
+        placement: 'right',
+        modifiers: {
+            flip: {
+                    behavior: ['right', 'left', 'top','bottom']
+            }
+        }
+                        
+    });
+
+</script>

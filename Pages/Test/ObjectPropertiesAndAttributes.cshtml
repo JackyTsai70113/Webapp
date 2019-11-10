@@ -1,0 +1,135 @@
+﻿@page
+@model Webapp.Pages.JsonEditors.CreateModel
+
+@{
+    ViewData["Title"] = "ObjectPropertiesAndAttributes";
+}
+
+<pre>
+    var random;
+    random = <pre style="display:inline;color:red;">Object.defineProperties</pre>(
+        {}, {
+            x: {
+                value: 1,
+                writable: true,
+                enumerable: false,
+                configurable: true
+            },
+            y: {
+                value: "y0",
+                writable: true,
+                enumerable: false,
+                configurable: true
+            },
+            r: {
+                get: function () { return 0; },
+                enumerable: true,
+                configurable: true
+            }
+        }        
+    )
+    Object.defineProperty(Object.prototype,
+        <pre style="display:inline;color:red;">"showOwnPropertyNames"</pre>,
+        {
+            writable: true,
+            enumerable: false,
+            configurable: true,
+            value: function () {
+                var names = <pre style="display:inline;color:red;">Object.getOwnPropertyNames(this);</pre>
+                var namesStr = "";
+                for (var i = 0; i < names.length; i++)
+                    namesStr += names[i] + " ";
+                return namesStr;
+            }
+        }
+    )
+
+    Object.defineProperty(Object.prototype,
+        "showOwnPropertyNamesAndDescriptors",
+        {
+            writable: true,
+            enumerable: false,
+            configurable: true,
+            value: function () {
+                var names = <pre style="display:inline;color:red;">Object.getOwnPropertyNames(this);</pre>
+                var result = "{\n";
+                for (var i = 0; i < names.length; i++) {
+                    result += "\t{ name: " + names[i] + ", ";
+                    var desc = <pre style="display:inline;color:red;">Object.getOwnPropertyDescriptor(this, names[i]);</pre>
+                    for (var p in desc) {
+                        result += p + ": " + desc[p] + ", ";
+                    }
+                    result += " }\n";
+                }
+                result += "}";
+                return result;
+            }
+        }
+    )
+</pre>
+<h6>random.showOwnPropertyNamesAndDescriptors() 結果為</h6>
+<textarea id="input" rows="10" cols="80" value =""></textarea>
+<script>
+    var random;
+    random = Object.defineProperties(
+        {}, {
+            x: {
+                value: 1,
+                writable: true,
+                enumerable: false,
+                configurable: true
+            },
+            y: {
+                value: "y0",
+                writable: true,
+                enumerable: false,
+                configurable: true
+            },
+            r: {
+                get: function () { return 0; },
+                enumerable: true,
+                configurable: true
+            }
+        }        
+    )
+    Object.defineProperty(Object.prototype,
+        "showOwnPropertyNames",
+        {
+            writable: true,
+            enumerable: false,
+            configurable: true,
+            value: function () {
+                var names = Object.getOwnPropertyNames(this);
+                var namesStr = "";
+                for (var i = 0; i < names.length; i++)
+                    namesStr += names[i] + " ";
+                return namesStr;
+            }
+        }
+    )
+
+    Object.defineProperty(Object.prototype,
+        "showOwnPropertyNamesAndDescriptors",
+        {
+            writable: true,
+            enumerable: false,
+            configurable: true,
+            value: function () {
+                var names = Object.getOwnPropertyNames(this);
+                var result = "{\n";
+                for (var i = 0; i < names.length; i++) {
+                    result += "\t{ name: " + names[i] + ", ";
+                    var desc = Object.getOwnPropertyDescriptor(this, names[i]);
+                    for (var p in desc) {
+                        result += p + ": " + desc[p] + ", ";
+                    }
+                    result += " }\n";
+                }
+                result += "}";
+                return result;
+            }
+        }
+    )
+    console.log(random.showOwnPropertyNamesAndDescriptors());
+    $('#input').val(random.showOwnPropertyNamesAndDescriptors());
+</script>

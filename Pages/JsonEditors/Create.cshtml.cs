@@ -35,7 +35,7 @@ namespace Webapp.Pages.JsonEditors
             {
                 return Page();
             }
-
+            JsonEditor.UpdateTime = DateTime.Now;
             _context.JsonEditor.Add(JsonEditor);
             await _context.SaveChangesAsync();
 

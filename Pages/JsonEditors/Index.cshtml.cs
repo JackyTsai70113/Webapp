@@ -12,14 +12,14 @@ namespace Webapp.Pages.JsonEditors
 {
     public class IndexModel : PageModel
     {
-        private readonly Webapp.Data.WebappContext _context;
+        private readonly WebappContext _context;
 
-        public IndexModel(Webapp.Data.WebappContext context)
+        public IndexModel(WebappContext context)
         {
             _context = context;
         }
 
-        public IList<JsonEditor> JsonEditor { get;set; }
+        public IList<JsonEditor> JsonEditor { get; set; }
 
         public async Task OnGetAsync()
         {

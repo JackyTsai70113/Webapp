@@ -1,0 +1,49 @@
+﻿@page
+@model Webapp.Pages.Plugins.tempusdominusDatetimePickerModel
+
+@{
+    ViewData["Title"] = "TD_DatetimePicker";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input"
+                           data-target="#datetimepicker2" data-toggle="datetimepicker"
+                           value="@(DateTime.Now.ToString("yyyy/MM/dd hh:mm"))"/>
+                    <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    dayViewHeaderFormat: 'YYYY MMMM',
+                    format: 'YYYY/MM/DD hh:mm',
+                    locale: 'zh-tw',
+                    viewMode:  'days',
+                    icons: {
+                        time: 'far fa-clock',
+                        date: 'far fa-calendar',
+                        up: 'far fa-arrow-up',
+                        down: 'far fa-arrow-down',
+                        previous: 'far fa-chevron-left',
+                        next: 'far fa-chevron-right',
+                        today: 'far fa-calendar-check-o',
+                        clear: 'far fa-trash',
+                        close: 'far fa-times'
+                    }
+                });
+            });
+        </script>
+    </div>
+</div>
+
+<style>
+    .datetimepicker-input{
+        text-align: center;
+    }
+</style>

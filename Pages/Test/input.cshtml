@@ -1,0 +1,78 @@
+﻿@page
+@model Webapp.Pages.Test.inputModel
+
+@{
+    ViewData["Title"] = "input";
+}
+
+<p>HI</p>
+
+<script>
+
+    var p = {
+        // x 與 y 是一般的可讀寫資料特性。
+        x: 1.0,
+        y: 1.0,
+
+        //this 參考到點物件
+        // r 是具有getter 和 setter 的可讀寫accessor 特性。
+        get r() { return Math.sqrt(this.x * this.x + this.y * this.y); },
+        set r(newvalue) {
+            var oldvalue = Math.sqrt(this.x * this.x + this.y * this.y);
+            var ratio = newvalue / oldvalue;
+            this.x *= ratio;
+            this.y *= ratio;
+        },
+
+        // theta 是只有getter的唯獨accessor特性
+        get theta() { return Math.atan2(this.y, this.x); },
+    }
+
+
+    window.onload = function () {
+        var x = document.createElement("input");
+        x.name = 'x';
+        x.type = 'number';
+        x.className = "form-control tanTest";
+        x.value = 0;
+
+        var y = document.createElement("input");
+        y.name = 'y';
+        y.type = 'number';
+        y.className = "form-control tanTest";
+        y.value = 0;
+
+        var tanData = document.createElement("p");
+        tanData.innerText = "222";
+
+        document.body.appendChild(x);
+        document.body.appendChild(y);
+        document.body.appendChild(tanData);
+
+
+        var tanTests = document.getElementsByClassName("tanTest");
+        //alert(tanTests.length);
+
+        /* 非jquery
+        for (var i = 0; i < tanTests.length; i++) {
+            tanTests[i].onkeyup = function () {
+                alert("23");
+            }
+            tanTests[i].addEventListener("keyup", function () { alert("45"); });
+        }*/
+
+
+        // jquery
+        $("input.tanTest").bind('keyup mouseup', function () {
+            var xv = $("input.tanTest[name='x']")[0].value;
+            var yv = $("input.tanTest[name='y']")[0].value;
+            if (yv != 0)
+                tanData.innerText = Math.atan2(yv, xv);
+        });
+    }
+
+    var p1 = Object.create(p);
+    console.log(p1.r);
+    console.log(p1.theta);
+</script>
+

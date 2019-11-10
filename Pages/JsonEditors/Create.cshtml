@@ -5,23 +5,33 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<link rel="stylesheet" href="~/css/jsonEditor.css" />
 
-<h4>JsonEditor</h4>
+<h4>新增 Json 物件</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-md-10 well">
+                <h4 name="title">Name</h4>
+                <select name="data-type">
+                    <option value="" selected>Please select</option>
+                    <option value="string">string</option>
+                    <option value="number">number</option>
+                    <option value="datetime">datetime</option>
+                    <option value="boolean">boolean</option>
+                    <option value="object">object</option>
+                </select>
+                <label class="control-label" for="data_name">名稱</label>
+                <input type="text" class="form-control" id="data_name"
+                       name="data-name" value=""/>
+            </div>
+            <input type="color"/>
             <div class="form-group">
                 <label asp-for="JsonEditor.Name" class="control-label"></label>
                 <input asp-for="JsonEditor.Name" class="form-control" />
                 <span asp-validation-for="JsonEditor.Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="JsonEditor.UpdateTime" class="control-label"></label>
-                <input asp-for="JsonEditor.UpdateTime" class="form-control" />
-                <span asp-validation-for="JsonEditor.UpdateTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="JsonEditor.Content" class="control-label"></label>
@@ -29,8 +39,19 @@
                 <span asp-validation-for="JsonEditor.Content" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="JsonEditor.Note" class="control-label"></label>
+                <input asp-for="JsonEditor.Note" class="form-control" />
+                <span asp-validation-for="JsonEditor.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
         </form>
     </div>
 </div>
@@ -38,6 +59,8 @@
 <div>
     <a asp-page="Index">Back to List</a>
 </div>
+
+<script src="~/js/jsonEditor.js"></script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -1,0 +1,74 @@
+@page
+@model Webapp.Pages.Randomusers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Randomuser</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Randomuser.name" class="control-label"></label>
+                <input asp-for="Randomuser.name" class="form-control" />
+                <span asp-validation-for="Randomuser.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.gender" class="control-label"></label>
+                <input asp-for="Randomuser.gender" class="form-control" />
+                <span asp-validation-for="Randomuser.gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.location" class="control-label"></label>
+                <input asp-for="Randomuser.location" class="form-control" />
+                <span asp-validation-for="Randomuser.location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.registered" class="control-label"></label>
+                <input asp-for="Randomuser.registered" class="form-control" />
+                <span asp-validation-for="Randomuser.registered" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.phone" class="control-label"></label>
+                <input asp-for="Randomuser.phone" class="form-control" />
+                <span asp-validation-for="Randomuser.phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.cell" class="control-label"></label>
+                <input asp-for="Randomuser.cell" class="form-control" />
+                <span asp-validation-for="Randomuser.cell" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.large_picture" class="control-label"></label>
+                <input asp-for="Randomuser.large_picture" class="form-control" />
+                <span asp-validation-for="Randomuser.large_picture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.medium_picture" class="control-label"></label>
+                <input asp-for="Randomuser.medium_picture" class="form-control" />
+                <span asp-validation-for="Randomuser.medium_picture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Randomuser.thumbnail_picture" class="control-label"></label>
+                <input asp-for="Randomuser.thumbnail_picture" class="form-control" />
+                <span asp-validation-for="Randomuser.thumbnail_picture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

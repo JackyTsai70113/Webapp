@@ -1,0 +1,8 @@
+{
+    "emmet.includeLanguages": {
+        "cshtml": "html"
+    },
+    "files.associations": {
+        "*.cshtml": "aspnetcorerazor"
+    }
+}

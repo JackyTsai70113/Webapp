@@ -47,6 +47,7 @@ namespace Webapp.Pages.JsonEditors
             {
                 return Page();
             }
+            JsonEditor.UpdateTime = DateTime.Now;
 
             _context.Attach(JsonEditor).State = EntityState.Modified;
 

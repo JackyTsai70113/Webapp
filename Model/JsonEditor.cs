@@ -16,5 +16,8 @@ namespace Webapp.Model
 
         [Display(Name = "內容")]
         public string Content { get; set; }
+
+        [Display(Name = "備註")]
+        public string Note { get; set; }
     }
 }

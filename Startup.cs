@@ -29,6 +29,8 @@ namespace Webapp
 
             services.AddDbContext<WebappContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("WebappContext")));
+
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

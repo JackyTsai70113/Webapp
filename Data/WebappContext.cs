@@ -6,12 +6,12 @@ namespace Webapp.Data
 {
     public class WebappContext : DbContext
     {
-        public WebappContext(DbContextOptions<WebappContext> options)
-            :base(options)
+        public WebappContext(DbContextOptions<WebappContext> options) : base(options)
         {
 
         }
 
         public DbSet<JsonEditor> JsonEditor { get; set; }
+        public DbSet<Randomuser> Randomuser { get; set; }
     }
 }

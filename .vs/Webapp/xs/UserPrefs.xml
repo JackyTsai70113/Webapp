@@ -1,27 +1,37 @@
 ﻿<Properties StartupConfiguration="{4C2DF03C-18C1-43D4-9A1A-B9C4C8E7CFAE}|Default">
   <MonoDevelop.Ide.ItemProperties.Webapp PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Plugins/DataTable/index.cshtml">
     <Files>
-      <File FileName="README.md" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="25" Column="6" />
-      <File FileName="Data/WebappContext.cs" Line="10" Column="27" />
-      <File FileName="Model/JsonEditor.cs" Line="9" Column="36" />
-      <File FileName="appsettings.json" Line="1" Column="1" />
-      <File FileName="Startup.cs" Line="25" Column="22" />
-      <File FileName="Pages/JsonEditors/Create.cshtml" Line="7" Column="1" />
+      <File FileName="Pages/Shared/_Layout.cshtml" Line="64" Column="67" />
+      <File FileName="Pages/JsonEditors/Create.cshtml.cs" Line="19" Column="17" />
+      <File FileName="wwwroot/js/jsonEditor.js" Line="14" Column="38" />
+      <File FileName="Pages/JsonEditors/Create.cshtml" Line="3" Column="1" />
+      <File FileName="Pages/Test/jsoneditor.cshtml" Line="25" Column="47" />
+      <File FileName="Pages/Test/ObjectPropertiesAndAttributes.cshtml" Line="10" Column="72" />
+      <File FileName="Pages/Test/ObjectPropertiesAndAttributes.cshtml.cs" Line="11" Column="27" />
+      <File FileName="wwwroot/lib/dataTable/css/jquery.dataTables.min.css" Line="1" Column="13900" />
+      <File FileName="wwwroot/lib/dataTable/js/jquery.dataTables.min.js" Line="12" Column="20" />
+      <File FileName="Pages/Plugins/DataTable/index.cshtml" Line="6" Column="16" />
+      <File FileName="Pages/Index.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Pages/Plugins/DataTable/Index.cshtml.cs" Line="9" Column="37" />
+      <File FileName="Pages/Plugins/JsonEditor.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Pages/Plugins/JsonEditor.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Option id="ShowAllFiles" value="True" />
           <Node name="Webapp" expanded="True">
             <Node name="Webapp" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Model" expanded="True" />
-              <Node name="Pages" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="wwwroot" expanded="True" />
-              <Node name="Program.cs" selected="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Plugins" expanded="True">
+                  <Node name="DataTable" expanded="True">
+                    <Node name="Index.cshtml" expanded="True" selected="True" />
+                  </Node>
+                  <Node name="JsonEditor.cshtml" expanded="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+                <Node name="Index.cshtml" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

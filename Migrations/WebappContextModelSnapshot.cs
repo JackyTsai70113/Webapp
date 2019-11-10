@@ -28,12 +28,54 @@ namespace Webapp.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Note")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("UpdateTime")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("JsonEditor");
+                });
+
+            modelBuilder.Entity("Webapp.Model.Randomuser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("cell")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("gender")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("large_picture")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("location")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("medium_picture")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("phone")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("registered")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("thumbnail_picture")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Randomuser");
                 });
 #pragma warning restore 612, 618
         }

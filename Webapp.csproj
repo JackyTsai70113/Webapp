@@ -11,9 +11,25 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Data\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Pages\JsonEditors\" />
+    <Folder Include="wwwroot\lib\popper\" />
+    <Folder Include="Pages\Test\" />
+    <Folder Include="Pages\Plugins\" />
+    <Folder Include="wwwroot\lib\moment\" />
+    <Folder Include="wwwroot\lib\moment\locale\" />
+    <Folder Include="wwwroot\lib\tempusdominus-bootstrap-4\" />
+    <Folder Include="wwwroot\lib\tempusdominus-bootstrap-4\js\" />
+    <Folder Include="wwwroot\lib\tempusdominus-bootstrap-4\css\" />
+    <Folder Include="wwwroot\lib\jsoneditor\" />
+    <Folder Include="wwwroot\lib\jsoneditor\img\" />
+    <Folder Include="wwwroot\lib\dataTable\" />
+    <Folder Include="wwwroot\lib\dataTable\css\" />
+    <Folder Include="wwwroot\lib\dataTable\js\" />
+    <Folder Include="Pages\Plugins\DataTable\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,6 +38,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Pages\JsonEditor\Create.cshtml.cs" />
@@ -36,10 +53,29 @@
     <None Remove="Pages\JsonEditor\Create.cshtml.cs~" />
     <None Remove="Pages\JsonEditor\Details.cshtml.cs~" />
     <None Remove="Pages\JsonEditor\Edit.cshtml.cs~" />
+    <None Remove="js\dist\tab.js.map" />
+    <None Remove="js\dist\util.js.map" />
+    <None Remove="js\dist\alert.js.map" />
+    <None Remove="js\dist\modal.js.map" />
+    <None Remove="js\dist\tooltip.js.map" />
+    <None Remove="js\dist\popover.js.map" />
+    <None Remove="js\dist\carousel.js.map" />
+    <None Remove="js\dist\button.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Pages\JsonEditor\Create.cshtml" />
     <Content Remove="Pages\JsonEditor\Delete.cshtml" />
     <Content Remove="Pages\JsonEditor\Index.cshtml" />
+    <Content Remove="wwwroot\lib\popper\css\propeller.css.map" />
+    <Content Remove="wwwroot\lib\popper\css\propeller.min.css" />
+    <Content Remove="wwwroot\lib\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Remove="wwwroot\lib\fontawesome-free-5.11.2-web\css\all.min.css" />
+    <Content Remove="wwwroot\lib\jsoneditor\src\js\showMoreNodeFactory.js" />
+    <Content Remove="wwwroot\lib\jsoneditor\src\js\TreePath.js" />
+    <Content Remove="wwwroot\lib\jsoneditor\src\js\constants.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Webapp.csproj" />
+    <None Include="Webapp.sln" />
   </ItemGroup>
 </Project>

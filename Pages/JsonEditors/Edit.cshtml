@@ -14,11 +14,15 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="JsonEditor.Id" />
-            <div class="form-group">
+            <select name="JsonEditor.Name">
+                <option value="123">123</option>
+                <option value="456">456</option>
+            </select>
+            @*<div class="form-group">
                 <label asp-for="JsonEditor.Name" class="control-label"></label>
                 <input asp-for="JsonEditor.Name" class="form-control" />
                 <span asp-validation-for="JsonEditor.Name" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="JsonEditor.UpdateTime" class="control-label"></label>
                 <input asp-for="JsonEditor.UpdateTime" class="form-control" />
@@ -28,6 +32,11 @@
                 <label asp-for="JsonEditor.Content" class="control-label"></label>
                 <input asp-for="JsonEditor.Content" class="form-control" />
                 <span asp-validation-for="JsonEditor.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JsonEditor.Note" class="control-label"></label>
+                <input asp-for="JsonEditor.Note" class="form-control" />
+                <span asp-validation-for="JsonEditor.Note" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
